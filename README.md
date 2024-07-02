@@ -17,37 +17,37 @@
 Catalog
 역할: 상품 정보 관리
 기능:
-- 상품 등록
-- 상품 수정
-- 상품 수량 관리
-- 상품 조회
-- 상품 검색
+- 상품 등록 POST /catalog/products
+- 상품 수정 PUT /catalog/products/{productId}
+- 상품 수량 관리 POST /catalog/change-inventory-count
+- 상품 조회 GET /catalog/products/{productId}
+- 상품 검색 POST /catalog/search
 
 Payment
 역할: 결제 처리와 관련된 작업
 기능:
-- 결제 수단 등록
-- 결제 수단 변경
-- 결제
-- 결제 결과 조회
+- 결제 수단 등록 POST /payment/methods
+- 결제 수단 변경 PUT /payment/methods/{methodId}
+- 결제 POST /payment/process-payment
+- 결제 결과 조회 GET /payment/payments/{paymentId} 
 
 Order
 역할: 주문 처리를 수행하고 상태를 관리
 기능: 
-- 상품 주문
-- 주문 상태 조회
-- 주문 내역 보기
+- 상품 주문 POST  /order/process-order
+- 주문 상태 조회 GET /order/orders/{orderId}
+- 주문 내역 보기 GET /order/orders
 
 Delivery
 역할: 주문 완료된 제품 배송, 상태 관리
 기능:
-- 배송지 등록
-- 배송 처리
-- 배송 상태 조회
+- 배송지 등록 POST /delivery/addresses
+- 배송 처리 POST /delivery/process-delivery
+- 배송 상태 조회 GET /delivery/deliveries/{deliveryId}
 
 Member
 역할: 회원 등록 관리와 인증
 기능:
-- 회원 등록
-- 회원 정보 관리
-- 로그인
+- 회원 등록 POST /member/registration
+- 회원 정보 관리 PUT /member/members/{userId}
+- 로그인 POST /member/login
