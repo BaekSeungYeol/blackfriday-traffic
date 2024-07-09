@@ -52,5 +52,7 @@ Member
 - 회원 정보 관리 PUT /member/members/{userId}
 - 로그인 POST /member/login
 
+![img.png](img.png)
+
 <img width="951" alt="image" src="https://github.com/BaekSeungYeol/blackfriday-traffic/assets/47316511/d61f831b-cc48-4cf3-b648-4216dd4a63a9">
 
