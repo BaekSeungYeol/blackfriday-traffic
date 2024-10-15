@@ -9,14 +9,18 @@ class UserService(
     private val userRepository: UserRepository
 ) {
 
-    fun registerUser(loginId: String, userName: String) {
+    fun registerUser(loginId: String, userName: String): UserEntity {
         val user = UserEntity(loginId = loginId, userName = userName)
-        userRepository.save(user)
+        return userRepository.save(user)
     }
 
     fun modifyUser(userId: Long, userName: String): UserEntity {
         val user = userRepository.findById(userId).orElseThrow()
         user.userName = userName
         return userRepository.save(user)
+    }
+
+    fun getUser(loginId: String): UserEntity {
+        return userRepository.findByLoginId(loginId)
     }
 }
